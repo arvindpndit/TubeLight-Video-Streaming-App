@@ -16,17 +16,14 @@ const VideoContainer = () => {
     setVideos(json.items);
   }
 
-  console.log(videos);
-
   return (
-    <div className="w-10/12">
+    <div className="w-10/12 mx-auto">
       <ButtonList />
       <div className="flex flex-wrap justify-evenly">
         {videos.map((video) => (
           <VideoCard key={video.id} video={video} />
         ))}
       </div>
-      {/* <VideoCard videos={videos[0]} /> */}
     </div>
   );
 };

@@ -7,7 +7,7 @@ import store from "./utils/store";
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className="box-border font-sans">
         <Header />
         <Body />
       </div>

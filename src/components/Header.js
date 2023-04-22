@@ -1,6 +1,9 @@
 import React from "react";
 import { toggleSidebar } from "../utils/sidebarSlice";
 import { useDispatch } from "react-redux";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { BsSearch } from "react-icons/bs";
+import user from "../assets/user.jpg";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -9,13 +12,13 @@ const Header = () => {
   };
 
   return (
-    <div className="h-14 flex justify-between bg-slate-100">
-      <div className="flex gap-3 px-2">
+    <div className="h-14 flex justify-between px-6 ">
+      <div className="flex gap-5 pr-2">
         <div
-          className="flex items-center cursor-pointer"
+          className="flex items-center cursor-pointer text-xl "
           onClick={() => toggleHandler()}
         >
-          Icon
+          <RxHamburgerMenu />
         </div>
         <img
           className="h-14"
@@ -23,22 +26,20 @@ const Header = () => {
           alt="yt-logo"
         />
       </div>
+
       <div className="flex items-center">
         <input
           type="text"
-          placeholder="search"
-          className="h-10 w-96 rounded-l-full p-3"
+          placeholder="Search"
+          className="h-10 w-[570px] rounded-l-full p-3 border shadow-sm outline-none"
         />
-        <button className="h-10 rounded-r-full px-2 bg-slate-400 ">
-          Search
+        <button className="h-10 rounded-r-full px-6 bg-gray-100 border  ">
+          <BsSearch />
         </button>
       </div>
-      <div>
-        <img
-          className="h-14"
-          src="https://cdn.imgbin.com/3/12/17/imgbin-computer-icons-avatar-user-login-avatar-man-wearing-blue-shirt-illustration-mJrXLG07YnZUc2bH5pGfFKUhX.jpg"
-          alt="user-icon"
-        />
+
+      <div className="flex items-center justify-center">
+        <img className="h-8 w-8 rounded-full" src={user} alt="user-icon" />
       </div>
     </div>
   );
