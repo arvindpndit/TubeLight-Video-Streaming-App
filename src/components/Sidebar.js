@@ -14,6 +14,7 @@ import {
 } from "react-icons/md";
 import { BiHistory, BiLike, BiHelpCircle } from "react-icons/bi";
 import { RiArrowDownSLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const toggle = useSelector((store) => store.sidebar.toggle);
@@ -22,10 +23,12 @@ const Sidebar = () => {
   return (
     <div className="w-2/12 mt-4  ">
       <div className="pb-3 mb-3 border-b-[1px]">
-        <div className="flex justify-start gap-5  items-center mx-2 rounded-md bg-slate-100  h-10 ">
-          <AiFillHome className="text-xl ml-4" />
-          <div className=" text-md">Home</div>
-        </div>
+        <Link to="/">
+          <div className="flex justify-start gap-5  items-center mx-2 rounded-md bg-slate-100  h-10 ">
+            <AiFillHome className="text-xl ml-4" />
+            <div className=" text-md">Home</div>
+          </div>
+        </Link>
         <div className="flex justify-start gap-5  items-center mx-2 rounded-md hover:bg-slate-100  h-10 ">
           <MdOutlineExplore className="text-xl ml-4" />
           <div className=" text-md">Explore</div>
