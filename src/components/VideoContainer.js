@@ -18,7 +18,7 @@ const VideoContainer = () => {
   }
 
   return (
-    <div className="w-10/12 mx-auto">
+    <div className="w-10/12 mx-auto mt-10 ">
       <ButtonList />
       <div className="flex flex-wrap justify-evenly">
         {videos.map((video) => (
