@@ -29,12 +29,12 @@ const Header = () => {
   const getSearchSuggestionsResult = async () => {
     const data = await fetch(YOUTUBE_SEARCH_SUGGESTIONS + searchText);
     const json = await data.json();
-    console.log(json);
+    //console.log(json);
     setSuggestions(json[1]);
   };
 
   return (
-    <div className="h-14 z-10 flex justify-between px-6 fixed w-full bg-white ">
+    <div className="h-14 z-10 flex justify-between px-6 fixed w-full bg-white  ">
       <div className="flex gap-10 pr-2">
         <div
           className="flex items-center cursor-pointer text-xl "
@@ -84,11 +84,15 @@ const Header = () => {
 
       <div className="flex items-center justify-center  ">
         <div className="h-10 flex justify-center items-center px-2   ">
-          <div className="font-bold text-lg text-gray-200 hover:text-gray-400">
+          <div className="font-bold text-lg text-gray-200 hover:text-gray-400 hover:cursor-pointer">
             Made by Arvind
           </div>
         </div>
-        <img className="h-10 w-10 rounded-full  " src={user} alt="user-icon" />
+        <img
+          className="h-10 w-10 rounded-full hover:cursor-pointer  "
+          src={user}
+          alt="user-icon"
+        />
       </div>
     </div>
   );

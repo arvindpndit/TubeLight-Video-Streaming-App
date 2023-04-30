@@ -5,10 +5,10 @@ const WatchPage = () => {
   const [seachParams] = useSearchParams();
   //console.log(seachParams.get("v"));
   return (
-    <div className="mx-auto">
+    <div className="mx-auto mt-14">
       <iframe
-        width="1100"
-        height="650"
+        width="1000"
+        height="580"
         src={
           "https://www.youtube.com/embed/" +
           seachParams.get("v") +

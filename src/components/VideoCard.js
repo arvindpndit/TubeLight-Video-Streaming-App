@@ -6,16 +6,16 @@ const VideoCard = ({ video }) => {
   const title2 = `${title.substring(0, 75)}....`;
 
   return (
-    <div className="min-h-72 w-96 my-10 hover:scale-95 duration-200 hover:cursor-pointer ">
+    <div className="min-h-72 w-[350px] my-10  hover:cursor-pointer ">
       <div>
         <img
           src={thumbnails?.standard?.url}
           alt="thumbnails"
-          className="h-52 w-96 object-cover rounded-xl"
+          className="h-48 w-[350px] object-cover rounded-xl hover:rounded-none duration-300"
         />
       </div>
       <div>
-        <div className="font-bold text-lg ">
+        <div className="font-semibold text-md my-2 ">
           {title.length < 75 ? title : title2}
         </div>
         <div className="text-slate-600 ">{channelTitle}</div>
