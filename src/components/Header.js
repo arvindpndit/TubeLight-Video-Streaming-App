@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { toggleSidebar } from "../utils/sidebarSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { BsCheckLg, BsSearch } from "react-icons/bs";
 import user from "../assets/user.jpg";
 import tubelight from "../assets/Youtube.png";
 import { YOUTUBE_SEARCH_SUGGESTIONS } from "../utils/constants";
+import { cacheTheResult } from "../utils/searchSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -16,21 +17,35 @@ const Header = () => {
   const [searchText, setSearchText] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestionOnFocus, setShowSuggestionOnFocus] = useState(false);
-  //console.log(searchText);
+
+  const searchCachedResult = useSelector((store) => store.search);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      getSearchSuggestionsResult();
+      searchCachedResult[searchText]
+        ? setSuggestions(searchCachedResult[searchText])
+        : getSearchSuggestionsResult();
+      //getSearchSuggestionsResult();
     }, 200);
 
     return () => clearTimeout(timer);
   }, [searchText]);
 
   const getSearchSuggestionsResult = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_SUGGESTIONS + searchText);
-    const json = await data.json();
-    //console.log(json);
-    setSuggestions(json[1]);
+    try {
+      const data = await fetch(YOUTUBE_SEARCH_SUGGESTIONS + searchText);
+      const json = await data.json();
+      setSuggestions(json[1]);
+    } catch (error) {
+      console.error(`Oops!! Something went wrong : ${error.message}`);
+    }
+
+    //updating the state
+    dispatch(
+      cacheTheResult({
+        [searchText]: suggestions,
+      })
+    );
   };
 
   return (
