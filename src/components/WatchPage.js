@@ -1,32 +1,39 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import LiveChat from "./LiveChat";
 import HireMeAd from "./HireMeAd";
 import { useDispatch } from "react-redux";
 import { closeSidebar } from "../utils/sidebarSlice";
+import { YOUTUBE_VIDEO_DATA } from "../utils/constants";
+import WatchVideo from "./WatchVideo";
+import VideoDescription from "./VideoDescription";
 
 const WatchPage = () => {
-  const [seachParams] = useSearchParams();
+  const [videoInfo, setVideoInfo] = useState(null);
+  const [searchParams] = useSearchParams();
   const dispatch = useDispatch();
   useEffect(() => {
+    getVideoData();
     dispatch(closeSidebar());
   }, []);
+
+  async function getVideoData() {
+    const data = await fetch(
+      YOUTUBE_VIDEO_DATA +
+        searchParams.get("v") +
+        "&key=" +
+        process.env.REACT_APP_API_KEY
+    );
+    const json = await data.json();
+    setVideoInfo(json);
+    console.log(json);
+  }
+
   return (
     <div className=" mt-14 flex justify-evenly w-full mb-5">
-      <div>
-        <iframe
-          width="850"
-          height="480"
-          src={
-            "https://www.youtube.com/embed/" +
-            seachParams.get("v") +
-            "?autoplay=1"
-          }
-          title="YouTube video player"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-          className="mt-6"
-        ></iframe>
+      <div className="flex flex-col">
+        <WatchVideo video={videoInfo} />
+        <VideoDescription video={videoInfo} />
       </div>
 
       <div className="flex flex-col gap-6">

@@ -1,18 +1,22 @@
 import React from "react";
 import user from "../assets/user.jpg";
+import banner from "../assets/github_banner.png";
 
 const HireMeAd = () => {
   return (
-    <div className="w-[400px] h-[180px] border rounded-xl">
-      <div className="h-[65px] border-b bg-gradient-to-r from-cyan-500 to-blue-500 rounded-t-xl"></div>
-      <div className="flex justify-between items-center h-[115px] px-4">
+    <div className="w-[400px] h-[160px] border rounded-xl">
+      <div
+        style={{ "--image-url": `url(${banner})` }}
+        className="h-[70px] border-b bg-[image:var(--image-url)] bg-cover bg-center rounded-t-xl"
+      ></div>
+      <div className="flex justify-between items-center h-[90px] px-4">
         <div className="flex gap-3 ">
           <img src={user} alt="" className="h-14 rounded-full" />
           <div>
             <div className="font-semibold">ARVIND PANDIT</div>
             <div className="text-sm text-gray-500">
-              <span className="font-semibold text-black">Ad: </span>Frontend
-              Developer
+              <span className="font-semibold text-black text-sm">Ad: </span>
+              Open to Work
             </div>
           </div>{" "}
         </div>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addChatMessage } from "../utils/chatSlice";
 import { FaUserCircle } from "react-icons/fa";
 import { generateRandomName, generateRandomMessage } from "../utils/helper";
+import user from "../assets/user.jpg";
 
 const LiveChat = () => {
   const LiveMessages = useSelector((store) => store.chat.messages);
@@ -26,19 +27,19 @@ const LiveChat = () => {
     };
   }, []);
   return (
-    <div className="mt-6 border w-[400px] rounded-2xl h-[550px] flex flex-col items-stretch">
+    <div className="mt-6 border w-[400px] rounded-2xl h-[570px] flex flex-col items-stretch">
       <div className="flex justify-between  py-3 px-4 border-b">
         <div>Live Chat</div>
         <div>:</div>
       </div>
       <div className=" flex flex-col-reverse overflow-y-scroll h-[480px]">
-        {LiveMessages.map((message) => (
-          <LiveMessage name={message.name} message={message.text} />
+        {LiveMessages.map((message, index) => (
+          <LiveMessage key={index} name={message.name} message={message.text} />
         ))}
       </div>
       <div className="flex justify-between  py-3 px-4 border-t">
         <div className="flex  gap-3">
-          <FaUserCircle className="text-2xl text-green-500" />
+          <img src={user} alt="" className="h-7 rounded-full" />
           <div className="flex flex-col justify-center gap-2">
             <div className="font-semibold text-md text-gray-500">Arvind</div>
             <form

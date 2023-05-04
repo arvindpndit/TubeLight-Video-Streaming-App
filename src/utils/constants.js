@@ -4,3 +4,6 @@ export const YOUTUBE_VIDEO_URL =
 
 export const YOUTUBE_SEARCH_SUGGESTIONS =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+
+export const YOUTUBE_VIDEO_DATA =
+  "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
