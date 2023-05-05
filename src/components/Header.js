@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { BsCheckLg, BsSearch } from "react-icons/bs";
 import user from "../assets/user.jpg";
-import tubelight from "../assets/Youtube.png";
+import tubelight from "../assets/Tubelight.png";
 import { YOUTUBE_SEARCH_SUGGESTIONS } from "../utils/constants";
 import { cacheTheResult } from "../utils/searchSlice";
 

@@ -6,7 +6,7 @@ const VideoCard = ({ video }) => {
   const title2 = `${title.substring(0, 75)}....`;
 
   return (
-    <div className="min-h-72 w-[350px] my-10  hover:cursor-pointer ">
+    <div className="min-h-72 w-[350px] my-8  hover:cursor-pointer ">
       <div>
         <img
           src={thumbnails?.standard?.url}
@@ -15,7 +15,7 @@ const VideoCard = ({ video }) => {
         />
       </div>
       <div>
-        <div className="font-semibold text-md my-2 ">
+        <div className="font-normal text-md my-2 ">
           {title.length < 75 ? title : title2}
         </div>
         <div className="text-slate-600 ">{channelTitle}</div>

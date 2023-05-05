@@ -9,11 +9,13 @@ const WatchVideo = ({ video }) => {
   const [searchParams] = useSearchParams();
 
   if (!video) {
-    return <p>Loading...</p>;
+    return;
   }
+  console.log(video);
 
   const title = video?.items[0]?.snippet?.localized?.title;
   const channelName = video?.items[0]?.snippet?.channelTitle;
+  const likeCount = video?.items[0]?.statistics?.likeCount;
 
   return (
     <div>
@@ -37,33 +39,35 @@ const WatchVideo = ({ video }) => {
         <div className="flex justify-between">
           <div className="flex gap-3 items-center ">
             <FaUserCircle className="text-3xl text-blue-500" />
-            <div className="font-lg font-semibold">{channelName}</div>
+            <div className="font-lg ">{channelName.substring(0, 18)}</div>
           </div>
           <div className="flex gap-3">
-            <div className="px-3 py-1.5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200">
+            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 text-sm">
               Join
             </div>
-            <div className="px-3 py-1.5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200 flex items-center gap-3">
+            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-3">
               <BsBell />
-              Subscribed
+              <div className="text-sm">Subscribed</div>
               <BsChevronDown />
             </div>
           </div>
           <div className="flex gap-3">
-            <div className="px-3 py-1.5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200 flex ">
-              <BiLike className="mx-2 text-xl" />
-              <div className="text-md mr-2 border-r pr-2">1.4k</div>
-              <BiDislike className="mx-2  text-xl" />
+            <div className="px-3 py-1.5 rounded-full  bg-gray-100 hover:bg-gray-200 flex ">
+              <BiLike className="mx-2 text-lg" />
+              <div className="text-sm mr-2 border-r pr-2">
+                {(likeCount / 10000).toFixed(1) + "K"}
+              </div>
+              <BiDislike className="mx-2  text-lg" />
             </div>
-            <div className="px-3 py-1/5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
+            <div className="px-3 py-1/5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
               <TbShare3 />
-              <div>Share</div>
+              <div className="text-sm">Share</div>
             </div>
-            <div className="px-3 py-1.5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200 flex gap-3 items-center">
+            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex gap-3 items-center">
               <BiDownload />
-              <div>Download</div>
+              <div className="text-sm">Download</div>
             </div>
-            <div className="px-3 py-1.5 rounded-full  font-semibold bg-gray-100 hover:bg-gray-200 flex items-center">
+            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center">
               <BsThreeDots />
             </div>
           </div>

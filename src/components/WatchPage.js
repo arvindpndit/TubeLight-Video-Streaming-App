@@ -15,6 +15,7 @@ const WatchPage = () => {
   useEffect(() => {
     getVideoData();
     dispatch(closeSidebar());
+    window.scrollTo(0, 0);
   }, []);
 
   async function getVideoData() {
