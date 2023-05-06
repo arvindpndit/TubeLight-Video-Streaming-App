@@ -7,3 +7,13 @@ export const YOUTUBE_SEARCH_SUGGESTIONS =
 
 export const YOUTUBE_VIDEO_DATA =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";
+
+export const YOUTUBE_COMMENT_DATA =
+  "https://www.googleapis.com/youtube/v3/commentThreads?part=snippet&videoId=";
+
+// {VIDEO_ID}&key={YOUR_API_KEY}
+
+export const YOUTUBES_RECOMMENDED_VIDEOS =
+  "https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=";
+
+//https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId={VIDEO_ID}&type=video&key={YOUR_API_KEY}

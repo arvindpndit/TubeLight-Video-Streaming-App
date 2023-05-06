@@ -11,7 +11,6 @@ const WatchVideo = ({ video }) => {
   if (!video) {
     return;
   }
-  console.log(video);
 
   const title = video?.items[0]?.snippet?.localized?.title;
   const channelName = video?.items[0]?.snippet?.channelTitle;
