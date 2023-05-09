@@ -5,7 +5,7 @@ const RecommendedVideos = ({ videos }) => {
   if (!videos) return;
 
   return (
-    <div>
+    <div className="w-[400px]">
       {videos.map((video) => {
         return <RecommendedVideo key={video.id} video={video} />;
       })}

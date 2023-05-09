@@ -16,4 +16,7 @@ export const YOUTUBE_COMMENT_DATA =
 export const YOUTUBES_RECOMMENDED_VIDEOS =
   "https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=";
 
-//https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId={VIDEO_ID}&type=video&key={YOUR_API_KEY}
+export const COMMENT_REPLIES =
+  "https://www.googleapis.com/youtube/v3/comments?part=snippet&parentId=";
+
+//"https://www.googleapis.com/youtube/v3/comments?part=snippet&parentId=${commentId}&key=${API_KEY}"

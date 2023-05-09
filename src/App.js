@@ -26,7 +26,7 @@ function App() {
   ]);
   return (
     <Provider store={store}>
-      <div className="box-border font-sans">
+      <div className="box-border ">
         <Header />
         <RouterProvider router={appRouter} />
       </div>
