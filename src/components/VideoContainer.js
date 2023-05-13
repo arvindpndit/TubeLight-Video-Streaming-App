@@ -19,7 +19,7 @@ const VideoContainer = () => {
     const json = await data.json();
     setVideos(json.items);
     setShowshimmer(false);
-    //console.log(videos);
+    //console.log(videos):
   }
 
   return showShimmer ? (
@@ -29,11 +29,12 @@ const VideoContainer = () => {
       <ButtonList />
 
       <div className="flex flex-wrap justify-evenly">
-        {videos.map((video) => (
-          <Link to={"/watch?v=" + video.id} key={video.id}>
-            <VideoCard video={video} />
-          </Link>
-        ))}
+        {videos &&
+          videos.map((video) => (
+            <Link to={"/watch?v=" + video.id} key={video.id}>
+              <VideoCard video={video} />
+            </Link>
+          ))}
       </div>
     </div>
   );

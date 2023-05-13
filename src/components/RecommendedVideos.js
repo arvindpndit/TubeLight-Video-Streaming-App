@@ -1,14 +1,19 @@
 import React from "react";
 import RecommendedVideo from "./RecommendedVideo";
+import { Link } from "react-router-dom";
 
 const RecommendedVideos = ({ videos }) => {
-  if (!videos) return;
-
+  console.log(videos);
   return (
     <div className="w-[400px]">
-      {videos.map((video) => {
-        return <RecommendedVideo key={video.id} video={video} />;
-      })}
+      {videos &&
+        videos.map((video) => {
+          return (
+            <Link to={"/watch?v=" + video.id} key={video.id}>
+              <RecommendedVideo key={video.id} video={video} />
+            </Link>
+          );
+        })}
     </div>
   );
 };

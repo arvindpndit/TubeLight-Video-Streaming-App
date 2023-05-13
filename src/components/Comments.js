@@ -36,9 +36,10 @@ const Comments = ({ comments }) => {
           </div>
         </div>
       </div>
-      {comments.map((comment) => {
-        return <Comment comment={comment} key={comment.id} />;
-      })}
+      {comments &&
+        comments.map((comment) => {
+          return <Comment comment={comment} key={comment.id} />;
+        })}
     </div>
   );
 };

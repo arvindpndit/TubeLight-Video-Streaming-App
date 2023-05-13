@@ -6,18 +6,22 @@ import {
   BiDownload,
   BiCloudLightRain,
 } from "react-icons/bi";
+import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
 import { COMMENT_REPLIES } from "../utils/constants";
 import CommentReplies from "./CommentReply";
 import CommentRepliesList from "./CommentRepliesList";
 
 const Comment = ({ comment }) => {
+  console.log(comment);
   const [replies, setReplies] = useState([]);
+  const [showreplies, setShowReplies] = useState(false);
 
   useEffect(() => {
     getCommentReplies();
   }, []);
 
   const title = comment?.snippet?.topLevelComment.snippet.authorDisplayName;
+  const replyCount = comment?.snippet?.totalReplyCount;
   const commentText = comment.snippet.topLevelComment.snippet.textDisplay;
   const userProfilePicture =
     comment.snippet.topLevelComment.snippet.authorProfileImageUrl;
@@ -32,23 +36,40 @@ const Comment = ({ comment }) => {
 
   return (
     <>
-      <div className="flex items-start gap-3 my-4">
-        <img
-          src={userProfilePicture}
-          alt=""
-          className=" rounded-full object-contain h-10"
-        />
+      <div className="flex items-start gap-3 my-7">
+        {userProfilePicture && (
+          <img
+            src={userProfilePicture}
+            alt=""
+            className=" rounded-full object-contain h-10"
+          />
+        )}
         <div className="flex flex-col ">
-          <div className="">{title}</div>
+          <div className="text-sm font-semibold">{title}</div>
           <div
-            className="text-sm"
+            className="text-sm mt-1"
             dangerouslySetInnerHTML={{
               __html: commentText,
             }}
           ></div>
+          <div className="flex gap-10  mt-2 items-center">
+            <BiLike className="text-xl" />
+            <BiDislike className="text-xl" />
+            <div className="text-sm font-semibold">Reply</div>
+          </div>
+          {replyCount !== 0 && (
+            <div className="font-semibold text-sm text-blue-600 flex rounded-3xl hover:bg-blue-100 mt-2 items-center  p-2 w-28 justify-between ">
+              {!showreplies ? <AiFillCaretDown /> : <AiFillCaretUp />}
+
+              <button onClick={() => setShowReplies(!showreplies)}>
+                {replyCount + " replies"}
+              </button>
+            </div>
+          )}
         </div>
       </div>
-      <CommentRepliesList replies={replies} />
+
+      {showreplies && <CommentRepliesList replies={replies} />}
     </>
   );
 };
