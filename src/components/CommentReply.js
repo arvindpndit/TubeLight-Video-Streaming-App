@@ -23,10 +23,12 @@ const CommentReply = ({ reply }) => {
             __html: commentText,
           }}
         ></div>
-        <div className="flex gap-10  mt-2 items-center">
-          <BiLike className="text-xl" />
-          <BiDislike className="text-xl" />
-          <div className="text-sm font-semibold">Reply</div>
+        <div className="flex gap-6  mt-2 items-center">
+          <BiLike className="text-3xl  p-1 rounded-full hover:bg-gray-200" />
+          <BiDislike className="text-3xl  p-1 rounded-full hover:bg-gray-200" />
+          <div className="text-sm font-semibold  py-1 px-2 hover:bg-gray-200 rounded-3xl">
+            Reply
+          </div>
         </div>
       </div>
     </div>

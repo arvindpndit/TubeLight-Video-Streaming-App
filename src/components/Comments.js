@@ -11,8 +11,8 @@ const Comments = ({ comments }) => {
         <div className="flex items-center gap-1">
           <span>
             <MdSort className="text-xl" />
-          </span>{" "}
-          Sort By
+          </span>
+          <div className="text-sm font-semibold">Sort By</div>
         </div>
       </div>
       <div className="flex gap-3 items-start justify-between my-2">
@@ -26,10 +26,10 @@ const Comments = ({ comments }) => {
           <div className="flex justify-between">
             <FaRegSmileBeam className="text-xl" />
             <div className="flex gap-3">
-              <div className="hover:bg-gray-100 text-sm py-2 px-3 rounded-3xl">
+              <div className="hover:bg-gray-100 text-sm py-2 px-3 rounded-3xl font-semibold">
                 Cancel
               </div>
-              <div className="bg-gray-100 text-sm py-2 px-3 rounded-3xl">
+              <div className="bg-gray-100 text-sm py-2 px-3 rounded-3xl font-semibold text-gray-600">
                 Comment
               </div>
             </div>

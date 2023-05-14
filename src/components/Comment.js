@@ -12,7 +12,7 @@ import CommentReplies from "./CommentReply";
 import CommentRepliesList from "./CommentRepliesList";
 
 const Comment = ({ comment }) => {
-  console.log(comment);
+  //console.log(comment);
   const [replies, setReplies] = useState([]);
   const [showreplies, setShowReplies] = useState(false);
 
@@ -52,10 +52,12 @@ const Comment = ({ comment }) => {
               __html: commentText,
             }}
           ></div>
-          <div className="flex gap-10  mt-2 items-center">
-            <BiLike className="text-xl" />
-            <BiDislike className="text-xl" />
-            <div className="text-sm font-semibold">Reply</div>
+          <div className="flex gap-6  mt-2 items-center">
+            <BiLike className="text-3xl  p-1 rounded-full hover:bg-gray-200" />
+            <BiDislike className="text-3xl  p-1 rounded-full hover:bg-gray-200" />
+            <div className="text-sm font-semibold  py-1 px-2 hover:bg-gray-200 rounded-3xl">
+              Reply
+            </div>
           </div>
           {replyCount !== 0 && (
             <div className="font-semibold text-sm text-blue-600 flex rounded-3xl hover:bg-blue-100 mt-2 items-center  p-2 w-28 justify-between ">

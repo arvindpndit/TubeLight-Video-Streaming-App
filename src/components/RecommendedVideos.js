@@ -9,7 +9,7 @@ const RecommendedVideos = ({ videos }) => {
       {videos &&
         videos.map((video) => {
           return (
-            <Link to={"/watch?v=" + video.id} key={video.id}>
+            <Link to={"/watch?v=" + video.id.videoId} key={video.id}>
               <RecommendedVideo key={video.id} video={video} />
             </Link>
           );

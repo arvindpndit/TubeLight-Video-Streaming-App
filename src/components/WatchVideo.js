@@ -41,30 +41,38 @@ const WatchVideo = ({ video }) => {
             <div className="font-lg ">{channelName.substring(0, 18)}</div>
           </div>
           <div className="flex gap-3">
-            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 text-sm">
+            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 text-sm font-semibold">
               Join
             </div>
             <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-3">
               <BsBell />
-              <div className="text-sm">Subscribed</div>
+              <div className="text-sm font-semibold">Subscribed</div>
               <BsChevronDown />
             </div>
           </div>
           <div className="flex gap-3">
             <div className="px-3 py-1.5 rounded-full  bg-gray-100 hover:bg-gray-200 flex ">
               <BiLike className="mx-2 text-lg" />
-              <div className="text-sm mr-2 border-r pr-2">
+              <div
+                className="text-sm mr-2 border-r pr-2
+              font-semibold"
+              >
                 {(likeCount / 10000).toFixed(1) + "K"}
               </div>
               <BiDislike className="mx-2  text-lg" />
             </div>
             <div className="px-3 py-1/5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
               <TbShare3 />
-              <div className="text-sm">Share</div>
+              <div
+                className="text-sm
+              font-semibold"
+              >
+                Share
+              </div>
             </div>
             <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex gap-3 items-center">
               <BiDownload />
-              <div className="text-sm">Download</div>
+              <div className="text-sm font-semibold">Download</div>
             </div>
             <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center">
               <BsThreeDots />
