@@ -15,7 +15,7 @@ const VideoCard = ({ video }) => {
         />
       </div>
       <div>
-        <div className="font-normal text-md my-2 ">
+        <div className="font-semibold text-md my-2 ">
           {title.length < 75 ? title : title2}
         </div>
         <div className="text-slate-600 ">{channelTitle}</div>

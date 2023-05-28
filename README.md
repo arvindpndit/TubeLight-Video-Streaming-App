@@ -4,7 +4,7 @@ TubeLight is large scalable video streaming appilication which uses YouTube vide
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS, React Router, Javascripts, Babel, Webpack
+**Client:** React, Redux, TailwindCSS, React Router, Javascript, Babel, Webpack
 
 ## Author
 
