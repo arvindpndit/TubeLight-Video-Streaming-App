@@ -67,11 +67,11 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col">
-        <div className="flex items-center mt-2">
+        <div className=" md:w-[400px] lg:w-[570px] hidden md:flex items-center mt-2">
           <input
             type="text"
             placeholder="Search"
-            className="h-10 w-[570px] rounded-l-full p-3 border shadow-sm outline-none"
+            className="h-10 w-full rounded-l-full p-3 border shadow-sm outline-none"
             onChange={(e) => setSearchText(e.target.value)}
             onFocus={() => setShowSuggestionOnFocus(true)}
             onBlur={() => setShowSuggestionOnFocus(false)}
@@ -99,7 +99,7 @@ const Header = () => {
 
       <div className="flex items-center justify-center  ">
         <div className="h-10 flex justify-center items-center px-2   ">
-          <div className="font-bold text-lg text-gray-200 hover:text-gray-400 hover:cursor-pointer">
+          <div className="hidden lg:block font-bold text-lg text-gray-200 hover:text-gray-400 hover:cursor-pointer">
             Made by Arvind
           </div>
         </div>
