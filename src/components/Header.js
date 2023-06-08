@@ -49,7 +49,7 @@ const Header = () => {
   };
 
   return (
-    <div className="h-14 z-10 flex justify-between px-6 fixed w-full bg-white  ">
+    <div className="h-14 z-30 flex justify-between px-6 fixed w-full bg-white  ">
       <div className="flex gap-10 pr-2">
         <div
           className="flex items-center cursor-pointer text-xl "
