@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RecommendedVideos = ({ videos }) => {
   console.log(videos);
   return (
-    <div className="w-full md:w-[400px] px-2 md:px-4">
+    <div className="w-full md:w-auto px-2 md:px-4">
       {videos &&
         videos.map((video) => {
           return (

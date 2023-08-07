@@ -28,7 +28,7 @@ const LiveChat = () => {
   }, []);
   return (
     <div className="px-2 md:px-4">
-      <div className="mt-6 border rounded-2xl md:w-[400px] h-[570px] md:h-[640px] flex flex-col items-stretch">
+      <div className="mt-6 border rounded-2xl md:w-auto h-[570px] md:h-[640px] flex flex-col items-stretch">
         <div className="flex justify-between py-3 px-4 border-b">
           <div className="text-lg">Live Chat</div>
           <div>:</div>

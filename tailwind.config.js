@@ -2,7 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        "md-custom": "1016px", // Add your custom breakpoint here
+      },
+    },
     fontFamily: {
       sans: ["Roboto", "sans-serif"],
     },

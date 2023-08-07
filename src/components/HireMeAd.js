@@ -5,7 +5,7 @@ import banner from "../assets/github_banner.png";
 const HireMeAd = () => {
   return (
     <div className=" px-2 md:px-4">
-      <div className="w-full md:w-[400px] h-auto border rounded-xl">
+      <div className="w-full md:w-auto h-auto border rounded-xl">
         <div
           style={{ "--image-url": `url(${banner})` }}
           className="h-[70px] border-b bg-[image:var(--image-url)] bg-cover bg-center rounded-t-xl"

@@ -66,14 +66,14 @@ const WatchPage = () => {
   }
 
   return (
-    <div className="mt-14 flex flex-col md:flex-row justify-between w-full mb-5">
-      <div className="flex flex-col md:w-1/2 lg:w-2/3">
+    <div className="mt-14 flex flex-col md-custom:flex-row w-full mb-5">
+      <div className="flex flex-col w-full md-custom:w-2/3">
         <WatchVideo video={videoInfo} />
         <VideoDescription video={videoInfo} />
         <Comments comments={comments} />
       </div>
 
-      <div className="flex flex-col md:w-1/2 lg:w-2/5 gap-6 mt-6 md:mt-0">
+      <div className="flex flex-col w-full md-custom:w-1/3  gap-6 mt-6 md:mt-0">
         <LiveChat />
         <HireMeAd />
         <RecommendedVideos videos={recommendedVideos} />
