@@ -15,9 +15,15 @@ import {
 import { BiHistory, BiLike, BiHelpCircle } from "react-icons/bi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { toggleSidebar } from "../utils/sidebarSlice";
 
 const Sidebar = () => {
   const toggle = useSelector((store) => store.sidebar.toggle);
+  const dispatch = useDispatch();
+  const toggleHandler = () => {
+    dispatch(toggleSidebar());
+  };
   //early return
   if (!toggle) return null;
   return (
@@ -26,7 +32,9 @@ const Sidebar = () => {
         <Link to="/">
           <div className="flex justify-start gap-5  items-center mx-2 rounded-md bg-slate-100  h-10 ">
             <AiFillHome className="text-xl ml-4" />
-            <div className=" text-md">Home</div>
+            <div className=" text-md" onClick={() => toggleHandler()}>
+              Home
+            </div>
           </div>
         </Link>
         <div className="flex justify-start gap-5  items-center mx-2 rounded-md hover:bg-slate-100  h-10 ">

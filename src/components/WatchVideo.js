@@ -32,28 +32,30 @@ const WatchVideo = ({ video }) => {
         allowFullScreen
         className="mt-2 md:mt-4"
       ></iframe>
-      <div className="mt-4 w-full md:w-auto">
-        <div className="text-xl text-center md:text-left mb-2 font-semibold ">
+      <div className="mt-4 w-full md:w-auto p-2">
+        <div className="text-xl  md:text-left mb-2 font-semibold ">
           {title !== undefined && title !== null && title.substring(0, 93)}
         </div>
         <div className="flex flex-wrap flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-3">
-          <div className="flex items-center ">
-            <FaUserCircle className="text-2xl md:text-3xl text-blue-500" />
-            <div className="font-medium text-sm md:text-lg ">
-              {channelName.substring(0, 18)}
+          <div className="flex gap-6 justify-between">
+            <div className="flex items-center ">
+              <FaUserCircle className="text-2xl md:text-3xl text-blue-500" />
+              <div className="font-medium text-sm md:text-lg ">
+                {channelName.substring(0, 18)}
+              </div>
+            </div>
+            <div className="flex gap-2 md:gap-3 mt-2 md:mt-0">
+              <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200">
+                Join
+              </div>
+              <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
+                <BsBell />
+                <div className="font-medium">Subscribed</div>
+                <BsChevronDown />
+              </div>
             </div>
           </div>
-          <div className="flex gap-2 md:gap-3 mt-2 md:mt-0">
-            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200">
-              Join
-            </div>
-            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
-              <BsBell />
-              <div className="font-medium">Subscribed</div>
-              <BsChevronDown />
-            </div>
-          </div>
-          <div className="flex gap-2 md:gap-3 mt-2 md:mt-0">
+          <div className="flex gap-2 md:gap-3 mt-2 md:mt-0 justify-between ">
             <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center">
               <BiLike className="text-lg md:text-xl" />
               <div className="text-xs md:text-sm mr-1 md:border-r md:pr-1 font-medium">
