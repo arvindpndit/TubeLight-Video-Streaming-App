@@ -21,7 +21,7 @@ const Sidebar = () => {
   //early return
   if (!toggle) return null;
   return (
-    <div className="fixed w-full sm:w-56 mt-[55px] bg-white h-full ">
+    <div className="fixed w-full sm:w-60 mt-[55px] bg-white h-full ">
       <div className="pb-3 mb-3 border-b-[1px]">
         <Link to="/">
           <div className="flex justify-start gap-5  items-center mx-2 rounded-md bg-slate-100  h-10 ">
