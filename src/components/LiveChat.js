@@ -27,21 +27,23 @@ const LiveChat = () => {
     };
   }, []);
   return (
-    <div className="mt-6 border w-[400px] rounded-2xl h-[570px] flex flex-col items-stretch">
-      <div className="flex justify-between  py-3 px-4 border-b">
-        <div>Live Chat</div>
+    <div className="mt-6 border rounded-2xl md:w-[400px] h-[570px] md:h-[640px] flex flex-col items-stretch">
+      <div className="flex justify-between py-3 px-4 border-b">
+        <div className="text-lg">Live Chat</div>
         <div>:</div>
       </div>
-      <div className=" flex flex-col-reverse overflow-y-scroll h-[480px]">
+      <div className="flex flex-col-reverse overflow-y-scroll h-[480px] md:h-[550px]">
         {LiveMessages.map((message, index) => (
           <LiveMessage key={index} name={message.name} message={message.text} />
         ))}
       </div>
-      <div className="flex justify-between  py-3 px-4 border-t">
-        <div className="flex  gap-3">
+      <div className="flex justify-between py-3 px-4 border-t">
+        <div className="flex gap-3">
           <img src={user} alt="" className="h-7 rounded-full" />
           <div className="flex flex-col justify-center gap-2">
-            <div className="font-semibold text-md text-gray-500">Arvind</div>
+            <div className="font-semibold text-sm md:text-md text-gray-500">
+              Arvind
+            </div>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -50,13 +52,13 @@ const LiveChat = () => {
             >
               <input
                 type="text"
-                className="border-b w-64 text-sm outline-none focus:border-b-2 focus:border-blue-500"
+                className="border-b w-full md:w-64 text-sm outline-none focus:border-b-2 focus:border-blue-500"
                 value={liveTextMessage}
                 onChange={(e) => setLiveTextMessage(e.target.value)}
-                placeholder="say something..."
+                placeholder="Say something..."
               />
               <button
-                className="text-gray-500 font-bold px-2"
+                className="text-gray-500 font-semibold px-2"
                 onClick={() => {
                   dispatch(
                     addChatMessage({

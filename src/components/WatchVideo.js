@@ -17,10 +17,10 @@ const WatchVideo = ({ video }) => {
   const likeCount = video?.items[0]?.statistics?.likeCount;
 
   return (
-    <div>
+    <div className="p-4 md:p-6">
       <iframe
-        width="850"
-        height="478"
+        width="100%"
+        height="240"
         src={
           "https://www.youtube.com/embed/" +
           searchParams.get("v") +
@@ -31,50 +31,44 @@ const WatchVideo = ({ video }) => {
         allowFullScreen
         className="mt-6"
       ></iframe>
-      <div>
-        <div className="text-xl mt-4 mb-2 font-semibold ">
+      <div className="mt-4">
+        <div className="text-xl text-center md:text-left mb-2 font-semibold ">
           {title !== undefined && title !== null && title.substring(0, 93)}
         </div>
-        <div className="flex justify-between">
-          <div className="flex gap-3 items-center ">
-            <FaUserCircle className="text-3xl text-blue-500" />
-            <div className="font-lg ">{channelName.substring(0, 18)}</div>
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-3">
+          <div className="flex items-center ">
+            <FaUserCircle className="text-2xl md:text-3xl text-blue-500" />
+            <div className="font-medium text-sm md:text-lg ">
+              {channelName.substring(0, 18)}
+            </div>
           </div>
-          <div className="flex gap-3">
-            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 text-sm font-semibold">
+          <div className="flex gap-2 md:gap-3 mt-2 md:mt-0">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200">
               Join
             </div>
-            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-3">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
               <BsBell />
-              <div className="text-sm font-semibold">Subscribed</div>
+              <div className="font-medium">Subscribed</div>
               <BsChevronDown />
             </div>
           </div>
-          <div className="flex gap-3">
-            <div className="px-3 py-1.5 rounded-full  bg-gray-100 hover:bg-gray-200 flex ">
-              <BiLike className="mx-2 text-lg" />
-              <div
-                className="text-sm mr-2 border-r pr-2
-              font-semibold"
-              >
+          <div className="flex gap-2 md:gap-3 mt-2 md:mt-0">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center">
+              <BiLike className="text-lg md:text-xl" />
+              <div className="text-xs md:text-sm mr-1 md:border-r md:pr-1 font-medium">
                 {(likeCount / 10000).toFixed(1) + "K"}
               </div>
-              <BiDislike className="mx-2  text-lg" />
+              <BiDislike className="text-lg md:text-xl" />
             </div>
-            <div className="px-3 py-1/5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center gap-1">
               <TbShare3 />
-              <div
-                className="text-sm
-              font-semibold"
-              >
-                Share
-              </div>
+              <div className="font-medium">Share</div>
             </div>
-            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex gap-3 items-center">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center gap-2">
               <BiDownload />
-              <div className="text-sm font-semibold">Download</div>
+              <div className="font-medium">Download</div>
             </div>
-            <div className="px-3 py-1.5 rounded-full   bg-gray-100 hover:bg-gray-200 flex items-center">
+            <div className="px-2 py-1 rounded-full text-xs md:text-sm bg-gray-100 hover:bg-gray-200 flex items-center">
               <BsThreeDots />
             </div>
           </div>
