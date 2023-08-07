@@ -66,7 +66,7 @@ const WatchPage = () => {
   }
 
   return (
-    <div className="mt-14 flex flex-col md:flex-row justify-evenly w-full mb-5">
+    <div className="mt-14 flex flex-col md:flex-row justify-between w-full mb-5">
       <div className="flex flex-col md:w-1/2 lg:w-2/3">
         <WatchVideo video={videoInfo} />
         <VideoDescription video={videoInfo} />

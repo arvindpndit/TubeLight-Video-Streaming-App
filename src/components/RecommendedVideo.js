@@ -5,11 +5,11 @@ const RecommendedVideo = ({ video }) => {
   const channelName = video.snippet.channelTitle;
   return (
     <div className=" flex gap-3 my-2">
-      <div className="w-56 ">
+      <div className="w-60 ">
         <img
           src={thumbnail}
           alt=""
-          className="h-24 w-full rounded-xl hover:rounded-none duration-300 "
+          className="h-24 w-60 rounded-xl hover:rounded-none duration-300 "
         />
       </div>
 

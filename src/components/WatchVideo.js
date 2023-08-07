@@ -17,10 +17,11 @@ const WatchVideo = ({ video }) => {
   const likeCount = video?.items[0]?.statistics?.likeCount;
 
   return (
-    <div className="p-4 md:p-6">
+    <div className=" md:p-4">
       <iframe
         width="100%"
-        height="240"
+        height="auto"
+        style={{ aspectRatio: "16/9" }}
         src={
           "https://www.youtube.com/embed/" +
           searchParams.get("v") +
@@ -29,13 +30,13 @@ const WatchVideo = ({ video }) => {
         title="YouTube video player"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
-        className="mt-6"
+        className="mt-2 md:mt-4"
       ></iframe>
-      <div className="mt-4">
+      <div className="mt-4 w-full md:w-auto">
         <div className="text-xl text-center md:text-left mb-2 font-semibold ">
           {title !== undefined && title !== null && title.substring(0, 93)}
         </div>
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-3">
+        <div className="flex flex-wrap flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-3">
           <div className="flex items-center ">
             <FaUserCircle className="text-2xl md:text-3xl text-blue-500" />
             <div className="font-medium text-sm md:text-lg ">

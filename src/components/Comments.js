@@ -5,7 +5,7 @@ import { MdSort } from "react-icons/md";
 
 const Comments = ({ comments }) => {
   return (
-    <div className="w-full md:w-[850px] mx-auto">
+    <div className="w-full md:w-auto  px-2 md:px-4">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:my-5 p-3 md:px-0">
         <div className="text-lg md:text-xl font-semibold">Comments</div>
         <div className="flex items-center gap-1 text-sm md:text-base font-semibold">
