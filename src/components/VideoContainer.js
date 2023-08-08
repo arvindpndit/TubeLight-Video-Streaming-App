@@ -21,7 +21,7 @@ const VideoContainer = () => {
     const data = await fetch(`${YOUTUBE_VIDEO_URL}&pageToken=${pageToken}`);
     const json = await data.json();
 
-    if (json.items.length > 0) {
+    if (json?.items?.length > 0) {
       setVideos((prevVideos) => [...prevVideos, ...json.items]);
       setPageToken(json.nextPageToken);
     } else {
