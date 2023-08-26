@@ -54,15 +54,13 @@ const WatchPage = () => {
   async function getRecommendedVideos() {
     const data = await fetch(
       YOUTUBES_RECOMMENDED_VIDEOS +
-        searchParams.get("v") +
-        "&type=video&maxResults=20" +
-        "&key=" +
-        process.env.REACT_APP_API_KEY
+        process.env.REACT_APP_API_KEY +
+        "&part=snippet&maxResults=50&type=video&relatedtovideoid=" +
+        searchParams.get("v")
     );
     const json = await data.json();
 
     setRecommendedVideos(json.items);
-    //console.log(recommendedVideos);
   }
 
   return (
