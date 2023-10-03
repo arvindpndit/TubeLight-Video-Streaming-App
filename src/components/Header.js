@@ -57,7 +57,7 @@ const Header = () => {
         >
           <RxHamburgerMenu />
         </div>
-        <div className="z-[-1]">
+        <div className="z-[-1] w-32">
           <img
             className="h-full scale-150 object-contain "
             src={tubelight}
