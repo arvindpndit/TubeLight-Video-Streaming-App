@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import LiveChat from "./LiveChat";
-import HireMeAd from "./HireMeAd";
+import LiveChat from "../livechat/LiveChat";
+import HireMeAd from "../ui/HireMeAd";
 import { useDispatch } from "react-redux";
-import { closeSidebar } from "../utils/sidebarSlice";
+import { closeSidebar } from "../../utils/sidebarSlice";
 import {
   YOUTUBES_RECOMMENDED_VIDEOS,
   YOUTUBE_COMMENT_DATA,
   YOUTUBE_VIDEO_DATA,
-} from "../utils/constants";
+} from "../../utils/constants";
 import WatchVideo from "./WatchVideo";
-import VideoDescription from "./VideoDescription";
-import Comments from "./Comments";
-import RecommendedVideos from "./RecommendedVideos";
+import VideoDescription from "../video/VideoDescription";
+import Comments from "../comment/Comments";
+import RecommendedVideos from "../recommended-videos/RecommendedVideos";
 
 const WatchPage = () => {
   const [videoInfo, setVideoInfo] = useState(null);

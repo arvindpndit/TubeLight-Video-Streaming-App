@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
 
 const Body = () => {

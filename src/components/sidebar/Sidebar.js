@@ -16,7 +16,7 @@ import { BiHistory, BiLike, BiHelpCircle } from "react-icons/bi";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { toggleSidebar } from "../utils/sidebarSlice";
+import { toggleSidebar } from "../../utils/sidebarSlice";
 
 const Sidebar = () => {
   const toggle = useSelector((store) => store.sidebar.toggle);

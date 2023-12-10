@@ -1,6 +1,6 @@
 import React from "react";
-import user from "../assets/user.jpg";
-import banner from "../assets/github_banner.png";
+import user from "../../assets/user.jpg";
+import banner from "../../assets/github_banner.png";
 
 const HireMeAd = () => {
   return (
