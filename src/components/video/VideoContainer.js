@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import ButtonList from "./ButtonList";
 import VideoCard from "./VideoCard";
-import { YOUTUBE_VIDEO_URL } from "../utils/constants";
+import { YOUTUBE_VIDEO_URL } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import WatchPage from "./WatchPage";
-import Shimmer from "./Shimmer";
+import WatchPage from "../watch-page/WatchPage";
+import Shimmer from "../ui/Shimmer";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const VideoContainer = () => {
@@ -35,8 +34,6 @@ const VideoContainer = () => {
     <Shimmer />
   ) : (
     <div className="w-full sm:w-10/12 mx-auto mt-10">
-      <ButtonList />
-
       <InfiniteScroll
         dataLength={videos.length}
         next={getVideos}

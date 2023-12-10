@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./components/Header";
+import Header from "./components/header/Header";
 import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import VideoContainer from "./components/VideoContainer";
-import WatchPage from "./components/WatchPage";
+import VideoContainer from "./components/video/VideoContainer";
+import WatchPage from "./components/watch-page/WatchPage";
 
 function App() {
   const appRouter = createBrowserRouter([

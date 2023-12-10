@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import user from "../assets/user.jpg";
 import {
   BiLike,
   BiDislike,
@@ -7,8 +6,7 @@ import {
   BiCloudLightRain,
 } from "react-icons/bi";
 import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { COMMENT_REPLIES } from "../utils/constants";
-import CommentReplies from "./CommentReply";
+import { COMMENT_REPLIES } from "../../utils/constants";
 import CommentRepliesList from "./CommentRepliesList";
 
 const Comment = ({ comment }) => {

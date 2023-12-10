@@ -1,5 +1,5 @@
 import Comment from "./Comment";
-import user from "../assets/user.jpg";
+import user from "../../assets/user.jpg";
 import { FaRegSmileBeam } from "react-icons/fa";
 import { MdSort } from "react-icons/md";
 

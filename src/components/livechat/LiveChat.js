@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import LiveMessage from "./LiveMessage";
 import { useDispatch, useSelector } from "react-redux";
-import { addChatMessage } from "../utils/chatSlice";
+import { addChatMessage } from "../../utils/chatSlice";
 import { FaUserCircle } from "react-icons/fa";
-import { generateRandomName, generateRandomMessage } from "../utils/helper";
-import user from "../assets/user.jpg";
+import { generateRandomName, generateRandomMessage } from "../../utils/helper";
+import user from "../../assets/user.jpg";
 
 const LiveChat = () => {
   const LiveMessages = useSelector((store) => store.chat.messages);
