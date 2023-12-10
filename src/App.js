@@ -1,11 +1,11 @@
 import "./App.css";
-import Header from "./components/header/Header";
 import Body from "./components/Body";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import VideoContainer from "./components/video/VideoContainer";
 import WatchPage from "./components/watch-page/WatchPage";
+import SearchPage from "./components/search/SearchPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -21,13 +21,16 @@ function App() {
           path: "/watch",
           element: <WatchPage />,
         },
+        {
+          path: "/search",
+          element: <SearchPage />,
+        },
       ],
     },
   ]);
   return (
     <Provider store={store}>
       <div className="box-border bg-white">
-        <Header />
         <RouterProvider router={appRouter} />
       </div>
     </Provider>
