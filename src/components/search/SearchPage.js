@@ -39,7 +39,11 @@ const SearchPage = () => {
                   {video?.snippet?.channelTitle}
                 </p>
                 <p className="text-sm text-gray-600">
-                  {video?.snippet?.publishedAt}
+                  {
+                    new Date(video?.snippet?.publishedAt)
+                      .toISOString()
+                      .split("T")[0]
+                  }
                 </p>
               </div>
             </div>

@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BsCheckLg, BsSearch } from "react-icons/bs";
-
 import { YOUTUBE_SEARCH_SUGGESTIONS } from "../../utils/constants";
 import { cacheTheResult } from "../../utils/searchSlice";
 import { Link } from "react-router-dom";
@@ -48,8 +47,8 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className=" md:w-[400px] lg:w-[570px] hidden md:flex items-center mt-2">
+    <div className="w-full sm:w-auto flex flex-col">
+      <div className="w-full flex md:w-[400px] lg:w-[570px] items-center mt-2">
         <input
           type="text"
           ref={inputRef}
@@ -57,32 +56,26 @@ const SearchBar = () => {
           className="h-10 w-full rounded-l-full p-3 border shadow-sm outline-none"
           onChange={(e) => setSearchText(e.target.value)}
           onFocus={() => setShowSuggestionOnFocus(true)}
-          //bug: due to onBlur the clickFunction isn't working
-          //onBlur={() => setShowSuggestionOnFocus(false)}
         />
-        <button className="h-10 rounded-r-full px-6 bg-gray-100 hover:bg-gray-200 border  ">
+        <button className="h-10 rounded-r-full px-6 bg-gray-100 hover:bg-gray-200 border ">
           <BsSearch />
         </button>
       </div>
-      {/* {console.log(suggestions)} */}
+
       {suggestions.length > 0 && showSuggestionOnFocus && (
-        <div className="relative w-[570px] bg-white rounded-xl shadow-2xl py-5 mt-2 border">
-          {suggestions.map((suggestion, index) => {
-            return (
-              <Link
-                to={"/search?query=" + suggestion}
-                onClick={handleLinkClick}
-              >
-                <div
-                  key={index}
-                  className=" px-5 py-1 min-h-0 text-lg hover:bg-gray-200 flex items-center gap-4"
-                >
-                  <BsSearch />
-                  {suggestion}
-                </div>
-              </Link>
-            );
-          })}
+        <div className=" md:w-[400px] lg:w-[570px] bg-white rounded-xl shadow-2xl py-5 mt-2 border">
+          {suggestions.map((suggestion, index) => (
+            <Link
+              to={"/search?query=" + suggestion}
+              onClick={handleLinkClick}
+              key={index}
+            >
+              <div className="px-5 py-1 min-h-0 text-lg hover:bg-gray-200 flex items-center gap-4">
+                <BsSearch />
+                {suggestion}
+              </div>
+            </Link>
+          ))}
         </div>
       )}
     </div>
