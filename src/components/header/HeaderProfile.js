@@ -1,8 +1,8 @@
-import user from "../../assets/user.jpg";
+import user from "../../assets/arvind.png";
 
 const HeaderProfile = () => {
   return (
-    <div className="flex items-center justify-center  ">
+    <div className="hidden sm:flex items-center justify-center  ">
       <div className="h-10 flex justify-center items-center px-2   ">
         <div className="hidden lg:block font-bold text-lg text-gray-200 hover:text-gray-400 hover:cursor-pointer">
           Made by Arvind

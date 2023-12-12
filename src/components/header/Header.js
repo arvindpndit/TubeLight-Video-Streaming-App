@@ -4,7 +4,7 @@ import SearchBar from "../search/SearchBar";
 
 const Header = () => {
   return (
-    <div className="h-14 z-30 flex justify-between px-6 fixed w-full bg-white  ">
+    <div className="h-14 z-30 flex justify-between px-2 sm:px-6 fixed w-full bg-white  ">
       <Logo />
       <SearchBar />
       <HeaderProfile />
