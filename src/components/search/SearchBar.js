@@ -56,6 +56,9 @@ const SearchBar = () => {
           className="h-10 w-full rounded-l-full p-3 border shadow-sm outline-none"
           onChange={(e) => setSearchText(e.target.value)}
           onFocus={() => setShowSuggestionOnFocus(true)}
+          onBlur={() => {
+            setTimeout(() => setShowSuggestionOnFocus(false), 200);
+          }}
         />
         <button className="h-10 rounded-r-full px-6 bg-gray-100 hover:bg-gray-200 border ">
           <BsSearch />
