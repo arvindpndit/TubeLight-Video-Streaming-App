@@ -3,7 +3,7 @@ export const YOUTUBE_VIDEO_URL =
   process.env.REACT_APP_API_KEY;
 
 export const YOUTUBE_SEARCH_SUGGESTIONS =
-  "https://corsproxy.io/?http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://proxy.cors.sh/https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const YOUTUBE_VIDEO_DATA =
   "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=";

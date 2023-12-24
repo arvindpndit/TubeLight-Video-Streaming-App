@@ -1,6 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { BsCheckLg, BsSearch } from "react-icons/bs";
+import { BsSearch } from "react-icons/bs";
 import { YOUTUBE_SEARCH_SUGGESTIONS } from "../../utils/constants";
 import { cacheTheResult } from "../../utils/searchSlice";
 import { Link } from "react-router-dom";
@@ -27,7 +27,9 @@ const SearchBar = () => {
   const getSearchSuggestionsResult = async () => {
     try {
       const data = await fetch(YOUTUBE_SEARCH_SUGGESTIONS + searchText);
+      console.log(data);
       const json = await data.json();
+      console.log(json);
       setSuggestions(json[1]);
     } catch (error) {
       console.error(`Oops!! Something went wrong : ${error.message}`);
