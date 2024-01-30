@@ -9,9 +9,9 @@ const VideoCard = ({ video }) => {
     <div className="min-h-72 w-[350px] my-8  hover:cursor-pointer ">
       <div>
         <img
-          src={thumbnails?.standard?.url}
+          src={thumbnails?.maxres?.url}
           alt="thumbnails"
-          className="h-48 w-[350px] object-cover rounded-xl hover:rounded-none duration-300"
+          className="h-44 w-[350px] object-cover rounded-xl hover:rounded-none duration-300"
         />
       </div>
       <div>
