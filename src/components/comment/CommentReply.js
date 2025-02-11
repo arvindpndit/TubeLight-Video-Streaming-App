@@ -1,6 +1,5 @@
-import React from "react";
-import { BiLike, BiDislike } from "react-icons/bi";
-import { AiFillCaretDown } from "react-icons/ai";
+import React from 'react';
+import { BiLike, BiDislike } from 'react-icons/bi';
 
 const CommentReply = ({ reply }) => {
   //if (reply.length === 0) return;
@@ -36,3 +35,4 @@ const CommentReply = ({ reply }) => {
 };
 
 export default CommentReply;
+

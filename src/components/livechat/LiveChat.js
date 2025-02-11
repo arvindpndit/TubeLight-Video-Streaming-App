@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
-import LiveMessage from "./LiveMessage";
-import { useDispatch, useSelector } from "react-redux";
-import { addChatMessage } from "../../utils/chatSlice";
-import { FaUserCircle } from "react-icons/fa";
-import { generateRandomName, generateRandomMessage } from "../../utils/helper";
-import user from "../../assets/user.jpg";
+import { useEffect, useState } from 'react';
+import LiveMessage from './LiveMessage';
+import { useDispatch, useSelector } from 'react-redux';
+import { addChatMessage } from '../../utils/chatSlice';
+import { generateRandomName, generateRandomMessage } from '../../utils/helper';
+import user from '../../assets/user.jpg';
 
 const LiveChat = () => {
   const LiveMessages = useSelector((store) => store.chat.messages);
-  const [liveTextMessage, setLiveTextMessage] = useState("");
+  const [liveTextMessage, setLiveTextMessage] = useState('');
   //api polling
   const dispatch = useDispatch();
   useEffect(() => {
@@ -18,7 +17,7 @@ const LiveChat = () => {
         addChatMessage({
           name: generateRandomName(),
           text: generateRandomMessage(),
-        })
+        }),
       );
     }, 1500);
 
@@ -52,7 +51,7 @@ const LiveChat = () => {
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  setLiveTextMessage("");
+                  setLiveTextMessage('');
                 }}
               >
                 <input
@@ -67,9 +66,9 @@ const LiveChat = () => {
                   onClick={() => {
                     dispatch(
                       addChatMessage({
-                        name: "Arvind",
+                        name: 'Arvind',
                         text: liveTextMessage,
-                      })
+                      }),
                     );
                   }}
                 >
@@ -85,3 +84,4 @@ const LiveChat = () => {
 };
 
 export default LiveChat;
+
