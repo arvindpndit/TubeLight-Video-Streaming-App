@@ -1,13 +1,8 @@
-import React, { useEffect, useState } from "react";
-import {
-  BiLike,
-  BiDislike,
-  BiDownload,
-  BiCloudLightRain,
-} from "react-icons/bi";
-import { AiFillCaretDown, AiFillCaretUp } from "react-icons/ai";
-import { COMMENT_REPLIES } from "../../utils/constants";
-import CommentRepliesList from "./CommentRepliesList";
+import React, { useEffect, useState } from 'react';
+import { BiLike, BiDislike } from 'react-icons/bi';
+import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
+import { COMMENT_REPLIES } from '../../utils/constants';
+import CommentRepliesList from './CommentRepliesList';
 
 const Comment = ({ comment }) => {
   //console.log(comment);
@@ -26,7 +21,7 @@ const Comment = ({ comment }) => {
 
   const getCommentReplies = async () => {
     const data = await fetch(
-      `${COMMENT_REPLIES}${comment.id}&key=${process.env.REACT_APP_API_KEY}`
+      `${COMMENT_REPLIES}${comment.id}&key=${process.env.REACT_APP_API_KEY}`,
     );
     const json = await data.json();
     setReplies(json.items);
@@ -62,7 +57,7 @@ const Comment = ({ comment }) => {
               {!showreplies ? <AiFillCaretDown /> : <AiFillCaretUp />}
 
               <button onClick={() => setShowReplies(!showreplies)}>
-                {replyCount + " replies"}
+                {replyCount + ' replies'}
               </button>
             </div>
           )}
@@ -75,3 +70,4 @@ const Comment = ({ comment }) => {
 };
 
 export default Comment;
+

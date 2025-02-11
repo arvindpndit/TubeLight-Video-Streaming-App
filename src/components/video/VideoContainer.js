@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import VideoCard from "./VideoCard";
-import { YOUTUBE_VIDEO_URL } from "../../utils/constants";
-import { Link } from "react-router-dom";
-import WatchPage from "../watch-page/WatchPage";
-import Shimmer from "../ui/Shimmer";
-import InfiniteScroll from "react-infinite-scroll-component";
+import React, { useEffect, useState } from 'react';
+import VideoCard from './VideoCard';
+import { YOUTUBE_VIDEO_URL } from '../../utils/constants';
+import { Link } from 'react-router-dom';
+import Shimmer from '../ui/Shimmer';
+import InfiniteScroll from 'react-infinite-scroll-component';
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  const [pageToken, setPageToken] = useState("");
+  const [pageToken, setPageToken] = useState('');
   const [hasMore, setHasMore] = useState(true);
   const [showShimmer, setShowShimmer] = useState(true);
 
@@ -41,9 +40,9 @@ const VideoContainer = () => {
         loader={<h4 className="mx-auto">Loading...</h4>}
         endMessage={<p className="mx-auto">No more videos to load</p>}
       >
-        <div className="flex flex-wrap justify-evenly">
+        <div className="flex flex-wrap justify-evenly mt-4">
           {videos.map((video) => (
-            <Link to={"/watch?v=" + video.id} key={video.id}>
+            <Link to={'/watch?v=' + video?.id} key={video?.etag}>
               <VideoCard video={video} />
             </Link>
           ))}
@@ -54,3 +53,4 @@ const VideoContainer = () => {
 };
 
 export default VideoContainer;
+
