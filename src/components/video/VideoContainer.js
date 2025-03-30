@@ -32,7 +32,7 @@ const VideoContainer = () => {
   return showShimmer ? (
     <Shimmer />
   ) : (
-    <div className="w-full sm:w-10/12 mx-auto mt-10">
+    <div className="w-full mx-auto mt-2 px-2 md:px-4 lg:px-6">
       <InfiniteScroll
         dataLength={videos.length}
         next={getVideos}
@@ -40,7 +40,7 @@ const VideoContainer = () => {
         loader={<h4 className="mx-auto">Loading...</h4>}
         endMessage={<p className="mx-auto">No more videos to load</p>}
       >
-        <div className="flex flex-wrap justify-evenly mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-16">
           {videos.map((video) => (
             <Link to={'/watch?v=' + video?.id} key={video?.etag}>
               <VideoCard video={video} />

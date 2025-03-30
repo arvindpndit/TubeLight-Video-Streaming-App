@@ -8,20 +8,20 @@ const VideoCard = ({ video }) => {
   const title2 = `${title.substring(0, 75)}....`;
 
   return (
-    <div className="w-[350px] my-3  hover:cursor-pointer ">
-      <div>
+    <div className="cursor-pointer ">
+      <div className="relative w-full aspect-[16/9]">
         <img
           src={thumbnails?.maxres?.url}
           alt="thumbnails"
-          className="h-48 w-[350px] object-cover rounded-xl hover:rounded-none duration-300"
+          className=" object-cover rounded-xl hover:rounded-none duration-300"
         />
       </div>
-      <div>
-        <div className="font-semibold text-md my-2 ">
+      <div className="mt-1 md:mt-3">
+        <div className="font-semibold text-sm line-clamp-2">
           {title.length < 75 ? title : title2}
         </div>
-        <div className="text-slate-600 ">{channelTitle}</div>
-        <div className="text-slate-600 flex items-center gap-0.5">
+        <p className="text-gray-600 text-xs mt-1">{channelTitle}</p>
+        <div className="text-gray-600 text-xs flex items-center gap-1 mt-1">
           {formatViewsCount(statistics.viewCount)}
           <BsDot />
           {timeAgo(publishedAt)}
